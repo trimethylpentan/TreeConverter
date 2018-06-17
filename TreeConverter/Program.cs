@@ -1,5 +1,6 @@
 ﻿using System;
 using TreeConverter.Input;
+using System.Text.RegularExpressions;
 
 namespace TreeConverter
 {
@@ -12,9 +13,19 @@ namespace TreeConverter
 			const string destinationPath = "destinationPath";
 			const string textureName = "textureName";
 
-            inputs
-                .AddInput(sourcePath, new PathInput("Bitte geben Sie den Pfad zu den zu kopierenden Dateien an:"));
+            Regex validTextureNames = 
+                new Regex("^[a-zA-Z]+((.png)|(.jpg)|(.bmp)|(.PNG)|(.JPG)|(.BMP))+$");
 
+            inputs
+                .AddInput(sourcePath, new PathInput(
+                    "Bitte geben Sie den Pfad zu den zu kopierenden Dateien an:"
+                ))
+                .AddInput(textureName, new RegexInput(
+                    "Bitte geben Sie den Texturnamen an:",
+                    validTextureNames
+                ));
+
+            Console.WriteLine("Drücken Sie eine beliebige Taste zum Beenden...");
 			Console.ReadLine();
         }
 	}

@@ -17,9 +17,7 @@ namespace TreeConverter
 		{
 			Console.WriteLine(message);
 
-			string directoryInput = Console.ReadLine();
-
-			return directoryInput;
+            return Console.ReadLine();
 		}
 
 		public bool IsValid(string input)
@@ -28,19 +26,9 @@ namespace TreeConverter
             {
                 return true;
             }
+
             errorMessage = "Der angegebene Pfad ist falsch";
             return false;
-                
-            //try
-            //{
-            //    Path.IsPathRooted(input);
-            //    return true;
-            //}
-            //catch
-            //{
-            //    errorMessage = "Der angegebene Pfad ist falsch.";
-            //    return false;
-            //}
 		}
 
         public string GetErrorMessage()
