@@ -1,4 +1,5 @@
 ﻿using System;
+using TreeConverter.Input;
 
 namespace TreeConverter
 {
@@ -6,7 +7,13 @@ namespace TreeConverter
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
-		}
+			InputReader inputs = new InputReader();
+			const string sourcePath = "sourcePath";
+
+			inputs.AddInput(sourcePath, new PathInput("Bitte geben Sie den Pfad zu den zu kopierenden Dateien an:"));
+
+			Console.WriteLine(inputs.GetInputResults()[sourcePath]);
+			Console.ReadLine();
+        }
 	}
 }
