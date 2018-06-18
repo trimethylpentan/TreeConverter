@@ -29,6 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InputReader.cs" />
@@ -37,9 +38,15 @@
     <Compile Include="Input\PathInput.cs" />
     <Compile Include="Input\InputInterface.cs" />
     <Compile Include="Input\RegexInput.cs" />
+    <Compile Include="Converter\DirectoryConverter.cs" />
+    <Compile Include="Controller\ConvertController.cs" />
+    <Compile Include="Converter\TextureNameConverter.cs" />
+    <Compile Include="Converter\AbstractFileConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Input\" />
+    <Folder Include="Converter\" />
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
